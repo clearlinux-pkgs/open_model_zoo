@@ -1,3 +1,8 @@
 mkdir -p %{buildroot}/usr/share/open_model_zoo
 cp -ar intel_models %{buildroot}/usr/share/open_model_zoo/
-cp -ar model_downloader %{buildroot}/usr/share/open_model_zoo/
+cp -ar models %{buildroot}/usr/share/open_model_zoo/
+cp -ar tools %{buildroot}/usr/share/open_model_zoo/
+mkdir -p %{buildroot}/usr/bin
+ln -s /usr/share/open_model_zoo/tools/downloader/downloader.py %{buildroot}/usr/bin/model-downloader
+ln -s /usr/share/open_model_zoo/tools/downloader/converter.py %{buildroot}/usr/bin/model-converter
+

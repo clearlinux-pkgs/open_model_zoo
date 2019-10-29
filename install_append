@@ -1,5 +1,4 @@
 mkdir -p %{buildroot}/usr/share/open_model_zoo
-cp -ar intel_models %{buildroot}/usr/share/open_model_zoo/
 cp -ar models %{buildroot}/usr/share/open_model_zoo/
 cp -ar tools %{buildroot}/usr/share/open_model_zoo/
 mkdir -p %{buildroot}/usr/bin

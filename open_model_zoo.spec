@@ -4,7 +4,7 @@
 #
 Name     : open_model_zoo
 Version  : 2019.r3.1
-Release  : 4
+Release  : 5
 URL      : https://github.com/opencv/open_model_zoo/archive/2019_R3.1/open_model_zoo-2019.R3.1.tar.gz
 Source0  : https://github.com/opencv/open_model_zoo/archive/2019_R3.1/open_model_zoo-2019.R3.1.tar.gz
 Summary  : @PACKAGE_DESCRIPTION@
@@ -64,20 +64,20 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572376667
+export SOURCE_DATE_EPOCH=1604903852
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 make  %{?_smp_mflags}  || :
 
 
 %install
-export SOURCE_DATE_EPOCH=1572376667
+export SOURCE_DATE_EPOCH=1604903852
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/open_model_zoo
 cp %{_builddir}/open_model_zoo-2019_R3.1/LICENSE %{buildroot}/usr/share/package-licenses/open_model_zoo/7df059597099bb7dcf25d2a9aedfaf4465f72d8d
@@ -92,6 +92,7 @@ cp -ar tools %{buildroot}/usr/share/open_model_zoo/
 mkdir -p %{buildroot}/usr/bin
 ln -s /usr/share/open_model_zoo/tools/downloader/downloader.py %{buildroot}/usr/bin/model-downloader
 ln -s /usr/share/open_model_zoo/tools/downloader/converter.py %{buildroot}/usr/bin/model-converter
+
 ## install_append end
 
 %files
